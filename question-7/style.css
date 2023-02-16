@@ -1,0 +1,19 @@
+body {
+	max-width: 1200px;
+	margin: 20px auto;
+}
+
+.categories {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px;
+}
+
+.category {
+	margin: 10px;
+	background-color: yellowgreen;
+}
+
+h2 a:hover {
+	color: #004993;
+}

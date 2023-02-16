@@ -1,0 +1,50 @@
+<!-- Considering the following requirements, implement a page with a contact form and basic styling:
+
+Email field *
+Name field *
+Subject field *
+Department - Support (default option), Sales and Customization
+Description *
+Attachment -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./index.css" />
+		<title>Question 8</title>
+	</head>
+	<body>
+		<div class="container">
+			<form>
+				<label for="email">Email</label>
+				<input type="email" name="email" placeholder="Type your email" />
+
+				<label for="name">Name</label>
+				<input type="text" name="name" placeholder="Type your name" />
+
+				<label for="subject">Subject</label>
+				<input type="text" name="subject" placeholder="Type relevant subject" />
+
+				<label for="department">Department</label>
+				<select name="department">
+					<option value="support" selected>Support</option>
+					<option value="sales">Sales</option>
+					<option value="customization">Customization</option>
+				</select>
+
+				<label for="description">Description</label>
+				<textarea
+					name="description"
+					placeholder="Describe your issue"
+				></textarea>
+
+				<label for="attachment">Attachment</label>
+				<input class="attachment" type="file" name="attachment" />
+
+				<button type="submit" value="Submit">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>

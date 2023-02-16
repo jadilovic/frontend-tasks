@@ -1,0 +1,28 @@
+<!-- Elaborate a project (HTML and CSS) implementing the the following topics:
+In the HTML syntax, there is a tag that allows an element to be displayed on the screen, which corresponds to the URL 
+https://helpjuice.com/, exclusively when clicking on the picture associated with the question, named HELPJUICE.PNG
+Upon clicking on "Copyright © 2022, Helpjuice Inc." nothing happens
+When the user hovers over the image, the mouse pointer changes, indicating that there is a link to another page. However, the 
+same thing does not happen when the user hovers over the sentence below the image -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./index.css" />
+		<title>Question 4</title>
+	</head>
+	<body>
+		<main>
+			<a class="image" href="https://helpjuice.com/">
+				<img
+					src="https://static.helpjuice.com/assets/marketing/helpjuice-logo-assets/helpjuice-png-b750c709b4e5cc2bc3b1a62612d02896fa445c91a2685d326bee178a4df8b7f1.png"
+					alt="Helpjuice Logo"
+				/>
+			</a>
+			<div class="copyright">Copyright © 2022, Helpjuice Inc.</div>
+		</main>
+	</body>
+</html>

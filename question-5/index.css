@@ -1,0 +1,26 @@
+article {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 20px;
+}
+
+p {
+	font-size: 14px;
+}
+
+.heading {
+	text-decoration: underline;
+	font-size: 20px;
+}
+
+.sub-heading {
+	text-decoration: underline;
+	font-size: 15px;
+}
+
+ul {
+	padding-inline-start: 20px;
+}
+
+li {
+	text-transform: capitalize;
+}

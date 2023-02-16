@@ -1,0 +1,55 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.header-container {
+	width: 100%;
+	background-color: grey;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+header {
+	max-width: 1000px;
+	margin: 20px auto;
+}
+
+nav {
+	display: flex;
+	justify-content: end;
+	font-weight: bold;
+	color: white;
+}
+
+ul {
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	list-style-type: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+}
+
+li {
+	text-transform: capitalize;
+}
+
+.search-container {
+	padding-top: 20px;
+}
+
+.search-categories {
+	height: 35px;
+}
+
+input {
+	height: 40px;
+}
+
+select {
+	background: lightgray;
+	font-weight: bold;
+}
