@@ -6,12 +6,20 @@ body {
 
 .header-container {
 	width: 100%;
-	background-color: grey;
+	background-image: linear-gradient(
+		to bottom,
+		#061020,
+		#293e48,
+		#596f6f,
+		#94a29a,
+		#d4d7cd
+	);
 	padding: 10px;
 	box-sizing: border-box;
 }
 
-header {
+header,
+main {
 	max-width: 1000px;
 	margin: 20px auto;
 }
@@ -38,6 +46,8 @@ li {
 }
 
 .search-container {
+	display: flex;
+	justify-content: center;
 	padding-top: 20px;
 }
 
@@ -52,4 +62,81 @@ input {
 select {
 	background: lightgray;
 	font-weight: bold;
+	height: 45.6px;
+	padding: 0 20px;
+	border-radius: 5px;
+}
+
+form {
+	color: #555;
+	display: flex;
+	padding: 2px;
+	border: 1px solid currentColor;
+	border-radius: 5px;
+	background: white;
+	max-width: fit-content;
+}
+
+input[type='search'] {
+	border: none;
+	background: transparent;
+	margin: 0;
+	padding: 7px 8px;
+	font-size: 14px;
+	color: inherit;
+	border: 1px solid transparent;
+	border-radius: inherit;
+}
+
+input[type='search']::placeholder {
+	color: #bbb;
+}
+
+button[type='submit'] {
+	text-indent: -999px;
+	overflow: hidden;
+	width: 40px;
+	padding: 0;
+	margin: 0;
+	border: 1px solid transparent;
+	border-radius: inherit;
+	background: transparent
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+		no-repeat center;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.breadcrumbs {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	border-bottom: 1px solid darkgray;
+	padding-bottom: 20px;
+}
+
+.breadcrumbs ul {
+	justify-content: flex-start;
+	gap: 20px;
+}
+
+section {
+	display: flex;
+	width: 100%;
+	max-height: 500px;
+	margin: 30px 0;
+}
+
+.left-side {
+	float: left;
+	width: 20%;
+	background: #ccc;
+	padding: 20px;
+}
+
+.right-side {
+	float: left;
+	width: 80%;
+	background: rgb(134, 121, 121);
+	padding: 20px;
 }

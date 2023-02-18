@@ -37,3 +37,27 @@ console.log(functionOne(5)(4));
 
 const two = functionOne(7);
 two(8);
+
+const getBurger = (callBack) => {
+	setTimeout(() => {
+		callBack();
+	}, 2000);
+};
+
+const callBack = () => {
+	console.log('callBack called');
+};
+
+const promise = () => {
+	console.log('promise called');
+};
+
+const getBurgerPromise = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve();
+	}, 3000);
+});
+
+getBurger(callBack);
+
+getBurgerPromise.then(() => promise());
