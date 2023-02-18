@@ -3,23 +3,22 @@ import React, { useContext, useState } from 'react';
 const ThemeContext = React.createContext();
 const ThemeUpdateContext = React.createContext();
 
-export function useTheme() {
+export const useTheme = () => {
 	return useContext(ThemeContext);
-}
+};
 
-export function useThemeUpdate() {
+export const useThemeUpdate = () => {
 	return useContext(ThemeUpdateContext);
-}
+};
 
 export const ThemeProvider = ({ children }) => {
-	const [darkTheme, setDarkTheme] = useState(false);
+	const [dark, setDark] = useState();
 
 	const toggleDarkTheme = () => {
-		console.log('test');
-		setDarkTheme((darkTheme) => !darkTheme);
+		setDark((dark) => !dark);
 	};
 	return (
-		<ThemeContext.Provider value={darkTheme}>
+		<ThemeContext.Provider value={dark}>
 			<ThemeUpdateContext.Provider value={toggleDarkTheme}>
 				{children}
 			</ThemeUpdateContext.Provider>
