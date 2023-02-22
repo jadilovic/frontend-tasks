@@ -1,6 +1,8 @@
 "use strict";
 
-var _obj;
+var _obj, _ref;
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -358,3 +360,109 @@ console.log(['a', 'b'] == ['a', 'b'] + []);
 console.log(['a', 'b', 'c'] == ['a', 'b'] + []);
 console.log(['a', 'b'] == ['b', 'a']);
 console.log(['a', 'b'] == 'a,b');
+var arr = [2, 4, 5, 6];
+console.log(arr.join(''));
+console.log(_typeof(null));
+console.log(null === undefined);
+var arrArr = [[1, 2, 3], [3, 4, ['a', 'b', 'c'], 5, 6], [1, 4]];
+console.log((_ref = []).concat.apply(_ref, arrArr));
+console.log(arrArr.flat(2));
+
+var customFlat = function customFlat(arr) {
+  var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var result = [];
+  arr.forEach(function (item) {
+    if (Array.isArray(item) && depth > 0) {
+      return result.push.apply(result, _toConsumableArray(customFlat(item, depth - 1)));
+    } else {
+      return result.push(item);
+    }
+  });
+  return result;
+};
+
+console.log(customFlat(arrArr, 2));
+
+function hello() {
+  var a = 3;
+}
+
+{
+  var b = 4;
+} //console.log(a);
+
+console.log(b);
+
+var displayIndex = function displayIndex(i) {
+  setTimeout(function () {
+    console.log(i);
+  });
+};
+
+var adding = function adding() {
+  for (var index = 0; index < 3; index++) {
+    displayIndex(index);
+  }
+};
+
+adding();
+var person = {
+  name: 'Otto',
+  age: function age(num) {
+    console.log("This guy ".concat(this.name, " is ").concat(num, " years old"));
+  }
+};
+var newPerson = {
+  name: 'Aki'
+};
+person.age.call(newPerson, 44);
+person.age.apply(newPerson, [55]);
+var listAge = person.age.bind(newPerson);
+listAge(66);
+person.age(33);
+
+var addFive = function addFive(num) {
+  return num + 5;
+};
+
+var subtractTwo = function subtractTwo(num) {
+  return num - 2;
+};
+
+var multiplyFour = function multiplyFour(num) {
+  return num * 4;
+};
+
+var compose = function compose(num) {
+  return addFive(subtractTwo(multiplyFour(num)));
+};
+
+console.log('test: ', compose(5));
+
+var compose2 = function compose2() {
+  for (var _len = arguments.length, functions = new Array(_len), _key = 0; _key < _len; _key++) {
+    functions[_key] = arguments[_key];
+  }
+
+  return function (args) {
+    return functions.reduceRight(function (arg, fn) {
+      return fn(arg);
+    }, args);
+  };
+};
+
+var evaluate = compose2(addFive, subtractTwo, multiplyFour);
+console.log('test 2 : ', evaluate(5));
+var objList = {
+  a: 'a',
+  b: 4,
+  c: 'dddd'
+};
+console.log(Object.keys(objList).map(function (item) {
+  console.log(objList[item]);
+}));
+console.log('----------------------------------------------------------');
+
+for (var key in objList) {
+  console.log(objList[key]);
+}

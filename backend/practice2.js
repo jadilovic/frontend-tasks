@@ -329,3 +329,120 @@ console.log(['a', 'b'] == ['a', 'b'] + []);
 console.log(['a', 'b', 'c'] == ['a', 'b'] + []);
 console.log(['a', 'b'] == ['b', 'a']);
 console.log(['a', 'b'] == 'a,b');
+
+const arr = [2, 4, 5, 6];
+console.log(arr.join(''));
+
+console.log(typeof null);
+console.log(null === undefined);
+
+const arrArr = [
+	[1, 2, 3],
+	[3, 4, ['a', 'b', 'c'], 5, 6],
+	[1, 4],
+];
+
+console.log([].concat(...arrArr));
+console.log(arrArr.flat(2));
+
+const customFlat = (arr, depth = 1) => {
+	const result = [];
+	arr.forEach((item) => {
+		if (Array.isArray(item) && depth > 0) {
+			return result.push(...customFlat(item, depth - 1));
+		} else {
+			return result.push(item);
+		}
+	});
+	return result;
+};
+
+console.log(customFlat(arrArr, 2));
+
+function hello() {
+	var a = 3;
+}
+
+{
+	var b = 4;
+}
+
+//console.log(a);
+console.log(b);
+
+const displayIndex = (i) => {
+	setTimeout(() => {
+		console.log(i);
+	});
+};
+
+const adding = () => {
+	for (var index = 0; index < 3; index++) {
+		displayIndex(index);
+	}
+};
+
+adding();
+
+const person = {
+	name: 'Otto',
+	age: function (num) {
+		console.log(`This guy ${this.name} is ${num} years old`);
+	},
+};
+
+const newPerson = {
+	name: 'Aki',
+};
+
+person.age.call(newPerson, 44);
+person.age.apply(newPerson, [55]);
+const listAge = person.age.bind(newPerson);
+listAge(66);
+person.age(33);
+
+const addFive = (num) => {
+	return num + 5;
+};
+
+const subtractTwo = (num) => {
+	return num - 2;
+};
+
+const multiplyFour = (num) => {
+	return num * 4;
+};
+
+const compose = (num) => {
+	return addFive(subtractTwo(multiplyFour(num)));
+};
+
+console.log('test: ', compose(5));
+
+const compose2 = (...functions) => {
+	return (args) => {
+		return functions.reduceRight((arg, fn) => fn(arg), args);
+	};
+};
+
+const evaluate = compose2(addFive, subtractTwo, multiplyFour);
+
+console.log('test 2 : ', evaluate(5));
+
+const objList = {
+	a: 'a',
+	b: 4,
+	c: 'dddd',
+};
+
+console.log(
+	Object.keys(objList).map((item) => {
+		console.log(objList[item]);
+	})
+);
+
+console.log('----------------------------------------------------------');
+
+for (const key in objList) {
+	console.log(objList[key]);
+}

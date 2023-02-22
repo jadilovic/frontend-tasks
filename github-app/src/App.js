@@ -34,8 +34,6 @@ function App() {
 		}
 	};
 
-	console.log(repos);
-
 	const handleRepo = async (repoName) => {
 		setRepoLoading(true);
 		try {
@@ -46,6 +44,7 @@ function App() {
 			setRepo(data);
 			console.log(data);
 			setRepoLoading(false);
+			window.location.href = `#${repoName}`;
 		} catch (error) {
 			console.log(error.message);
 		}

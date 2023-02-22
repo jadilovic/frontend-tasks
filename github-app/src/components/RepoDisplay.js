@@ -1,4 +1,20 @@
+import { useState, useEffect } from 'react';
+
 const RepoDisplay = ({ repo, loading }) => {
+	const [search, setSearch] = useState('');
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			console.log(search);
+		}, 2000);
+		return () => {
+			clearTimeout(timer);
+		};
+	}, [search]);
+
+	const handleDebounce = (e) => {
+		setSearch(e.target.value);
+	};
 	if (loading) {
 		return <h1>Loading...</h1>;
 	}
@@ -21,6 +37,14 @@ const RepoDisplay = ({ repo, loading }) => {
 				<label htmlFor="stars">Stars: </label>
 				<span>{repo.stargazers_count}</span>
 			</div>
+			<h4>Debounce</h4>
+			<input
+				type="text"
+				name="search"
+				value={search}
+				onChange={handleDebounce}
+			/>
+			<h6>{search}</h6>
 		</div>
 	);
 };

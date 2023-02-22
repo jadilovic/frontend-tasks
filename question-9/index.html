@@ -29,7 +29,7 @@
 				</div>
 			</header>
 		</div>
-		<main>
+		<main class="main-container">
 			<div class="breadcrumbs">
 				<ul>
 					<li>home</li>
@@ -38,9 +38,49 @@
 				</ul>
 			</div>
 			<section>
-				<div class="left-side">Test Left</div>
+				<div class="left-side">
+					<div class="dropdown">
+						<div onclick="toggleGettingStarted()" class="getting-started-btn">
+							<span>Getting Started</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="12"
+								height="12"
+								fill="currentColor"
+								class="bi bi-caret-down-fill"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+								/>
+							</svg>
+						</div>
+						<div id="myDropdown" class="dropdown-content">
+							<a href="#user-guides">User guides</a>
+							<a href="#developer">Developer</a>
+							<a href="#release-notes">Release notes</a>
+						</div>
+					</div>
+				</div>
 				<div class="right-side">Test Right</div>
 			</section>
 		</main>
+		<script>
+			function toggleGettingStarted() {
+				document.getElementById('myDropdown').classList.toggle('show');
+			}
+			window.onclick = function (event) {
+				if (!event.target.matches('.getting-started-btn')) {
+					var dropdowns = document.getElementsByClassName('dropdown-content');
+					var i;
+					for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+						}
+					}
+				}
+			};
+		</script>
 	</body>
 </html>
