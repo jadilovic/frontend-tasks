@@ -61,23 +61,132 @@
 							<a href="#release-notes">Release notes</a>
 						</div>
 					</div>
+					<div onclick="togglePersonalization()" class="personalization-btn">
+						<span>Personalization</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="12"
+							height="12"
+							fill="currentColor"
+							class="bi bi-caret-down-fill"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+							/>
+						</svg>
+					</div>
 				</div>
-				<div class="right-side">Test Right</div>
+				<div class="right-side">
+					<h2>Getting Started</h2>
+					<div class="cards">
+						<div class="card">
+							<svg height="70" width="70">
+								<rect
+									width="70"
+									height="70"
+									style="
+										fill: rgb(161, 130, 17);
+										stroke-width: 3;
+										stroke: rgb(0, 0, 0);
+									"
+								/>
+							</svg>
+							<div class="card-details">
+								<h3>User Guides</h3>
+								<p>We are new category with lots of useful information</p>
+							</div>
+						</div>
+						<div class="card">
+							<svg height="70" width="70">
+								<rect
+									width="70"
+									height="70"
+									style="fill: orange; stroke-width: 1; stroke: rgb(0, 0, 0)"
+								/>
+							</svg>
+							<div class="card-details">
+								<h3>Developer</h3>
+								<p>We are new category with lots of useful information</p>
+							</div>
+						</div>
+						<div class="card">
+							<svg height="70" width="70">
+								<rect
+									width="70"
+									height="70"
+									style="
+										fill: rgb(171, 132, 41);
+										stroke-width: 3;
+										stroke: rgb(0, 0, 0);
+									"
+								/>
+							</svg>
+							<div class="card-details">
+								<h3>Release Notes</h3>
+								<p>We are new category with lots of useful information</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
+		<div class="footer-container">
+			<footer>
+				<h2>Still need help?</h2>
+				<div class="contact-input">
+					<div class="input-block">
+						<label for="first-name">First Name</label
+						><input type="text" name="first-name" />
+					</div>
+					<div class="input-block">
+						<label for="last-name">Last Name</label
+						><input type="text" name="last-name" />
+					</div>
+					<div class="input-block">
+						<label for="email">Email</label><input type="email" name="email" />
+					</div>
+					<button>Get Started</button>
+				</div>
+				<div class="links-container">
+					<div class="links-column">
+						<ul>
+							<li><h5>Products</h5></li>
+							<li><a href="#">Personalization</a></li>
+							<li><a href="#">eCommerce</a></li>
+							<li><a href="#">Order Management</a></li>
+							<li><a href="#">Point of Sale</a></li>
+						</ul>
+						<ul>
+							<li><h5>Resources</h5></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Developer Blog</a></li>
+							<li><a href="#">Developers</a></li>
+							<li><a href="#">Support</a></li>
+						</ul>
+						<ul>
+							<li><h5>Who we are</h5></li>
+							<li><a href="#">Who we are</a></li>
+							<li><a href="#">Leadership</a></li>
+							<li><a href="#">News / Press</a></li>
+							<li><a href="#">Ecommerce Awards</a></li>
+						</ul>
+						<ul>
+							<li><h5>Employee Login</h5></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</div>
 		<script>
 			function toggleGettingStarted() {
 				document.getElementById('myDropdown').classList.toggle('show');
 			}
 			window.onclick = function (event) {
 				if (!event.target.matches('.getting-started-btn')) {
-					var dropdowns = document.getElementsByClassName('dropdown-content');
-					var i;
-					for (i = 0; i < dropdowns.length; i++) {
+					const dropdowns = document.getElementsByClassName('dropdown-content');
+					for (let i = 0; i < dropdowns.length; i++) {
 						var openDropdown = dropdowns[i];
-						if (openDropdown.classList.contains('show')) {
-							openDropdown.classList.remove('show');
-						}
 					}
 				}
 			};

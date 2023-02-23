@@ -6,20 +6,14 @@ body {
 
 .header-container {
 	width: 100%;
-	background-image: linear-gradient(
-		to bottom,
-		#061020,
-		#293e48,
-		#596f6f,
-		#94a29a,
-		#d4d7cd
-	);
+	background-image: linear-gradient(to bottom, #061020, #293e48, #596f6f);
 	padding: 10px;
 	box-sizing: border-box;
 }
 
 header,
-main {
+main,
+footer {
 	max-width: 1000px;
 	margin: 20px auto;
 }
@@ -43,6 +37,13 @@ ul {
 
 li {
 	text-transform: capitalize;
+}
+
+h2,
+h3,
+h5,
+p {
+	margin: 0;
 }
 
 .search-container {
@@ -107,10 +108,6 @@ button[type='submit'] {
 	opacity: 0.7;
 }
 
-.main-container {
-	height: 50vh;
-}
-
 .breadcrumbs {
 	position: relative;
 	display: flex;
@@ -120,6 +117,7 @@ button[type='submit'] {
 }
 
 .breadcrumbs ul {
+	width: auto;
 	justify-content: flex-start;
 	gap: 20px;
 }
@@ -128,30 +126,39 @@ section {
 	display: flex;
 	width: 100%;
 	height: 100%;
-	margin: 30px 0;
+	margin-top: 30px;
+	margin-bottom: 90px;
 }
 
 .left-side {
 	float: left;
 	width: 20%;
-	background: #ccc;
 }
 
 .right-side {
 	float: left;
 	width: 80%;
-	background: rgb(134, 121, 121);
-	padding: 20px;
+	padding: 0 20px;
 }
 
-.getting-started-btn {
+.right-side h2 {
+	padding-bottom: 20px;
+}
+
+.getting-started-btn,
+.personalization-btn {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background-color: transparent;
+	margin-bottom: 12px;
 	font-size: 16px;
 	border: none;
 	cursor: pointer;
+}
+
+.personalization-btn {
+	padding-top: 12px;
 }
 
 .dropdown {
@@ -162,17 +169,12 @@ section {
 
 .dropdown-content {
 	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	overflow: auto;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
+	border-left: 4px solid black;
 }
 
 .dropdown-content a {
 	color: black;
-	padding: 12px 16px;
+	padding: 8px 12px;
 	text-decoration: none;
 	display: block;
 }
@@ -185,10 +187,156 @@ section {
 	display: block;
 }
 
-.clicked {
+.getting-started-btn:hover,
+.personalization-btn:hover {
 	color: orange;
 }
 
 .bi-caret-down-fill {
 	transform: rotate(270deg);
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.card {
+	display: flex;
+	align-items: center;
+	border: 1px solid black;
+	border-radius: 4px;
+	box-shadow: 2px 2px gray;
+}
+
+.card svg {
+	min-width: 70px;
+	padding: 20px;
+}
+
+.card-details {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.footer-container {
+	width: 100%;
+	background-image: linear-gradient(to top, #061020, #293e48, #596f6f);
+	box-sizing: border-box;
+}
+
+footer h2 {
+	color: white;
+	padding: 20px 0;
+	font-weight: 400;
+}
+
+.contact-input {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #293e48;
+	padding: 20px;
+}
+
+.input-block {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	color: lightgray;
+	margin-right: 5px;
+}
+
+.input-block input {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid black;
+}
+
+.contact-input button {
+	min-width: 150px;
+	max-width: 200px;
+	font-size: 16px;
+	background-color: yellow;
+	border-radius: 20px;
+	padding: 10px;
+	margin: 0 20px;
+	cursor: pointer;
+}
+
+.links-container {
+	border-top: 2px solid gray;
+	margin: 20px 0;
+}
+
+.links-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	padding-bottom: 80px;
+}
+
+.links-column ul {
+	display: block;
+	color: white;
+}
+
+h5 {
+	margin-top: 20px;
+}
+
+.links-column ul li {
+	padding: 4px 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+@media screen and (max-width: 820px) {
+	nav {
+		justify-content: center;
+	}
+	nav ul {
+		display: block;
+	}
+	nav ul li {
+		padding: 4px 0;
+	}
+	.search-container {
+		display: grid;
+	}
+	section,
+	.breadcrumbs {
+		flex-direction: column;
+		align-items: center;
+	}
+	.left-side {
+		width: 80%;
+		padding: 0 20px;
+	}
+	.getting-started-btn {
+		margin-top: 12px;
+	}
+	.cards {
+		grid-template-columns: none;
+	}
+	footer h2 {
+		padding: 20px;
+	}
+	.contact-input {
+		flex-direction: column;
+	}
+	.input-block {
+		margin-top: 10px;
+	}
+	.contact-input button {
+		margin-top: 20px;
+	}
+	.links-column {
+		grid-template-columns: 1fr 1fr;
+	}
 }
