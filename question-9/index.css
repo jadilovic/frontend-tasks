@@ -87,10 +87,7 @@ input[type='search'] {
 	color: inherit;
 	border: 1px solid transparent;
 	border-radius: inherit;
-}
-
-input[type='search']::placeholder {
-	color: #bbb;
+	min-width: 350px;
 }
 
 button[type='submit'] {
@@ -177,6 +174,7 @@ section {
 	padding: 8px 12px;
 	text-decoration: none;
 	display: block;
+	font-weight: 700;
 }
 
 .dropdown a:hover {
@@ -194,6 +192,10 @@ section {
 
 .bi-caret-down-fill {
 	transform: rotate(270deg);
+}
+
+.rotate-caret {
+	transform: rotate(0deg);
 }
 
 .cards {
@@ -308,6 +310,9 @@ a {
 	}
 	.search-container {
 		display: grid;
+	}
+	input[type='search'] {
+		min-width: 200px;
 	}
 	section,
 	.breadcrumbs {

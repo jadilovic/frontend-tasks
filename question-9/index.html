@@ -23,7 +23,7 @@
 						<option value="all-products" selected>All products</option>
 					</select>
 					<form>
-						<input type="search" placeholder="Search..." />
+						<input type="search" />
 						<button type="submit">Search</button>
 					</form>
 				</div>
@@ -181,6 +181,9 @@
 		<script>
 			function toggleGettingStarted() {
 				document.getElementById('myDropdown').classList.toggle('show');
+				document
+					.querySelector('.bi-caret-down-fill')
+					.classList.toggle('rotate-caret');
 			}
 			window.onclick = function (event) {
 				if (!event.target.matches('.getting-started-btn')) {
