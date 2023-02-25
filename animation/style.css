@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+}
+
+.wrapper {
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+img {
+	/* transform: translate(-200px, 200px);
+	transform: scale(2); */
+	/* transform: rotate(45deg) translate(200px) scale(2); */
+}
+
+.circle {
+	width: 100px;
+	padding: 50px 0;
+	line-height: 0;
+	border-radius: 50px;
+	background-color: tan;
+	color: white;
+	margin: 10px auto;
+	cursor: pointer;
+	transition: transform 1s, background-color 0.3s 1s ease;
+}
+
+.circle:hover {
+	background-color: salmon;
+	transform: rotate(180deg);
+}
+
+.sky {
+	position: relative;
+	width: 100%;
+	background-color: aqua;
+	height: 20vh;
+}
+
+.grass {
+	width: 100%;
+	background-color: green;
+	height: 10vh;
+}
+
+.road {
+	position: relative;
+	width: 100%;
+	background-color: darkgray;
+	height: 30vh;
+}
+
+.lines {
+	position: absolute;
+	width: 100%;
+	border: 4px dashed white;
+	top: 100px;
+}
+
+.mario {
+	position: absolute;
+	left: 0;
+	top: -60px;
+	/* animation-name: drive;
+	animation-duration: 3s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-delay: 2s; */
+	animation: drive 3s ease 1.5s infinite both, jump 0.2s 2s ease;
+}
+
+.luigi {
+	position: absolute;
+	left: 0;
+	top: 100px;
+	animation-name: drive;
+	animation-duration: 5s;
+	animation-fill-mode: both;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+.cloud {
+	position: absolute;
+}
+
+.cloud:nth-child(1) {
+	width: 100px;
+	top: 40px;
+	left: 0;
+	animation: drive 60s ease 1s infinite alternate both;
+}
+
+.cloud:nth-child(2) {
+	width: 200px;
+	top: 20px;
+	left: 200px;
+	animation: wind 40s ease 1s infinite alternate both;
+}
+
+@keyframes drive {
+	from {
+		transform: translateX(-100px);
+	}
+	to {
+		transform: translateX(1000px);
+	}
+}
+
+@keyframes wind {
+	from {
+		left: -100px;
+	}
+	to {
+		left: 100%;
+	}
+}
+
+@keyframes jump {
+	0% {
+		top: -60px;
+	}
+	50% {
+		top: -120px;
+	}
+	100% {
+		top: -60px;
+	}
+}
