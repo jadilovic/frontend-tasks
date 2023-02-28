@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import RepoDisplay from './components/RepoDisplay';
+import { Girl } from './girl';
+import { Wolf } from './wolf';
+import { Employee, employee } from './employee';
 
 function App() {
 	const [userName, setUserName] = useState('');
@@ -10,7 +13,26 @@ function App() {
 	const [repoLoading, setRepoLoading] = useState(false);
 	const [notFound, setNotFound] = useState(false);
 
+	const girlInstance = new Girl('Suzy', 'Bear', () => console.log('react'), [
+		'done',
+	]);
+
+	const wolfInstance = new Wolf('Alfa', 'Grmec', 'Rabbit', () =>
+		console.log('wou wou wout')
+	);
+
+	const employee1 = new Employee('Aki', 1000, 2, 10);
+
 	useEffect(() => {
+		// girlInstance.showAll();
+		// wolfInstance.showEating();
+		// wolfInstance.showLocation();
+		// wolfInstance.callBackNoise();
+		// wolfInstance.promotionOnTV();
+		employee1.getWage();
+		employee.name = 'Bob';
+		employee.base_salary = 3000;
+		employee.getWage();
 		setRepos([]);
 		setRepo({});
 		setNotFound(false);
