@@ -53,3 +53,24 @@ const setNotFoundText = (error) => {
 	notFoundElement.textContent = error;
 	notFoundElement.style.color = 'red';
 };
+
+const createSubscribers = async () => {
+	console.log('testing ');
+	for (let index = 0; index < 10; index++) {
+		const subscriber = {
+			name: 'name' + index,
+			subscribedToChannel: '000' + index,
+		};
+		const newSubscriber = await fetch('http://localhost:5000/subscribers', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+			body: JSON.stringify(subscriber),
+		});
+		console.log(newSubscriber);
+	}
+};
+
+// createSubscribers();
