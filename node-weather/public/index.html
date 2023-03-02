@@ -8,7 +8,14 @@
 		<script
 			defer
 			type="text/javascript"
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4OyERPqhRoJ9vvEKGzxPOBgrYXOdSAWg&libraries=places"
+			src="https://maps.googleapis.com/maps/api/js?key=FOUND-IN-.ENV-FILE&libraries=places"
+		></script>
+		<script
+			defer
+			src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.js"
+			integrity="sha512-6Qi7qYyfdjqiOXOqpU4OYEPpcm4hE0IQGP/8YY9csFpkdbaOcSWlSWwkdADw/8nOtWqsjdibbiBsRhoRyjk1YQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
 		></script>
 		<script defer src="./script.js"></script>
 		<title>Weather App</title>
@@ -22,15 +29,15 @@
 			</div>
 			<div class="content">
 				<div class="general-information">
-					<div class="status" data-status>Enter A Location</div>
-					<div class="location" data-location>To Find Weather</div>
+					<h1 class="status" data-status>Enter A Location</h1>
+					<h3 class="location" data-location>To Find Weather</h3>
 				</div>
 				<div class="detail-section">
 					<div class="detail">
 						<div class="title">Wind</div>
 						<div class="value" data-wind id="wind">TBD</div>
 					</div>
-					<div class="detail">
+					<div class="detail bordered">
 						<div class="title">Temperature</div>
 						<div class="value" data-temperature id="temperature">TBD</div>
 					</div>
@@ -43,6 +50,7 @@
 			<div class="city-search-container">
 				<input type="text" placeholder="Enter location" class="city-search" />
 			</div>
+			<div class="not-found"></div>
 		</div>
 		<a href="https://www.visualcrossing.com/"
 			>Powered by Visual Crossing Weather</a

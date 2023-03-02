@@ -18,9 +18,14 @@ app.post('/weather', (req, res) => {
 	try {
 		const searchName = req.body.name;
 		const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchName}?unitGroup=metric&key=${VISUALCROSSING_API_KEY}&contentType=json`;
-		axios.get(url).then((data) => {
-			res.json(data.data);
-		});
+		axios
+			.get(url)
+			.then((data) => {
+				res.json(data.data);
+			})
+			.catch((error) => {
+				res.json({ message: error.response.data });
+			});
 	} catch (error) {
 		res.json({ message: error.message });
 	}
