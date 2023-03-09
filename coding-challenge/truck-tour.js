@@ -40,11 +40,13 @@ function truckTour(petrolpumps) {
 
 	return currentIndex;
 }
-
+console.log('=====================================');
 console.log(
 	truckTour([
 		[1, 5],
 		[10, 3],
+		[1, 4],
 		[3, 4],
+		[8, 4],
 	])
 );

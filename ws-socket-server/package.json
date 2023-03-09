@@ -1,16 +1,18 @@
 {
-	"name": "coding-challenge",
+	"name": "ws-socket-server",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon get-total-x.js"
+		"start": "nodemon index.js"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"nodemon": "^2.0.21"
+		"express": "^4.18.2",
+		"nodemon": "^2.0.21",
+		"socket.io": "^4.6.1"
 	}
 }
