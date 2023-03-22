@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon repeated-string.js"
+		"start": "nodemon taum-bday.js"
 	},
 	"keywords": [],
 	"author": "",

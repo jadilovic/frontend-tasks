@@ -49,3 +49,18 @@ div.appendChild(div2);
 const strong2 = document.createElement('strong');
 strong2.innerText = 'This is bold 2';
 div.append(strong2);
+
+try {
+	const x = window.prompt('Enter a number');
+	if (isNaN(x)) {
+		throw 'You entered not number';
+	}
+	if (x === '') {
+		throw 'You entered empty string';
+	}
+	console.log(`You entered number ${x}`);
+} catch (error) {
+	console.log('Error: ', error);
+} finally {
+	console.log('Always runs');
+}
