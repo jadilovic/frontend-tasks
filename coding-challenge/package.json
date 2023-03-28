@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon flat-land-space-stations.js"
+		"start": "nodemon minimum-number.js"
 	},
 	"keywords": [],
 	"author": "",
