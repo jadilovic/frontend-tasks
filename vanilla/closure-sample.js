@@ -288,3 +288,151 @@ const recursion = (arr) => {
 };
 recursion(arrArr);
 console.log(flattenedArr);
+
+console.log('---------------------------------------------');
+
+const orders = [44, 66, 77, 11, 4, 66, 99, 66, 10];
+
+const total = orders.reduce((acc, curr) => (acc += curr), 0);
+const withTax = orders.map((item) => (item * 1.1).toFixed(2));
+const highValue = orders.filter((item) => item > 50);
+
+console.log(total);
+console.log(withTax);
+console.log(highValue);
+console.log('---------------------------------------');
+
+const exp = '{[({})]}';
+
+const openPer = {
+	'{': '}',
+	'[': ']',
+	'(': ')',
+};
+
+const closedPer = {
+	'}': '{',
+	']': '[',
+	')': '(',
+};
+
+const isBalancedParentheses = (parString) => {
+	const arrPer = [];
+	for (let i = 0; i < exp.length; i++) {
+		if (!!openPer[exp[i]]) {
+			arrPer.push(exp[i]);
+		} else {
+			if (arrPer.includes(closedPer[exp[i]])) {
+				const index = arrPer.findIndex((item) => item === closedPer[exp[i]]);
+				arrPer.splice(index, 1);
+			} else {
+				return false;
+			}
+		}
+	}
+	return arrPer.length < 1 ? true : false;
+};
+
+console.log(isBalancedParentheses(exp));
+
+console.log('___________________________________________');
+
+const getPhoto = (url, callback) => {
+	console.log('Downloading...');
+	setTimeout(() => {
+		callback(url);
+	}, 2000);
+};
+
+const googleUrl = 'google.com';
+
+const displayPhoto = (url) => {
+	console.log(`Got photo from ${url}`);
+};
+
+getPhoto(googleUrl, displayPhoto);
+
+console.log('===========================================================');
+
+const addingNumbers = (num) => {
+	const cache = {};
+	return (value) => {
+		if (value in cache) {
+			console.log('From cache');
+			return cache[value];
+		} else {
+			console.log('Creating value');
+			cache[value] = num + 10;
+			return cache[value];
+		}
+	};
+};
+
+const add = addingNumbers(3);
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
+
+console.log(
+	'`````````````````````````````````````````````````````````````````````````'
+);
+const numsObj = {
+	a: 3,
+	b: 4,
+	c: 'Hello',
+};
+
+for (const key in numsObj) {
+	if (typeof numsObj[key] === 'number') {
+		numsObj[key] *= 10;
+	}
+}
+
+console.log(numsObj);
+
+console.log('===========================================');
+
+const aki = {
+	name: 'jasmin',
+	age: 44,
+};
+
+const akiString = JSON.stringify(aki);
+console.log(akiString);
+const akiObject = JSON.parse(akiString);
+console.log(akiObject);
+
+console.log(
+	'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt'
+);
+
+console.log([...'testing and now']);
+
+const settings = {
+	name: {
+		first: 'jasmin',
+		last: 'adilovic',
+	},
+	health: 3,
+	strength: 10,
+};
+
+const {
+	name: { first, last },
+	health,
+	strength,
+} = settings;
+console.log(first, last, health, strength);
+
+const newString = JSON.stringify(settings, ['name']);
+console.log(newString);
+const newObj = JSON.parse(newString);
+console.log(newObj);
+
+console.log('----------------------------------------------------');
+const getList = (arr, item, ...args) => {
+	return [...arr, item, ...args];
+};
+
+console.log(getList(['ab', 'cd', 'ef'], 'aki', 'boby', 'mark'));
