@@ -12,6 +12,10 @@ const getNumDraws = async (year) => {
 	for (let i = 0; i < 11; i++) {
 		const response = await getData(i);
 		const { data } = response;
+		if (data.total < 1) {
+			continue;
+		}
+		console.log(data, i);
 		count += data.total;
 	}
 	return count;
