@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon weighted-uniform-strings.js"
+		"start": "nodemon separate-numbers.js"
 	},
 	"keywords": [],
 	"author": "",
