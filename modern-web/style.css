@@ -1,0 +1,43 @@
+#newDiv {
+	height: 100px;
+	width: 100px;
+	background-color: aquamarine;
+	border: 1px solid black;
+}
+
+#outerDiv {
+	height: 200px;
+	width: 200px;
+	background-color: aquamarine;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 200px;
+}
+
+#box {
+	height: 50px;
+	width: 50px;
+	background-color: blueviolet;
+	position: relative;
+	/* margin-left: 40px;
+	margin-top: 40px; */
+}
+
+#anBox {
+	height: 100px;
+	width: 100px;
+	background-color: black;
+	position: relative;
+}
+
+#myCanvas {
+	border: 1px solid black;
+}
+
+#myWindow {
+	height: 2000px;
+	width: 2000px;
+}

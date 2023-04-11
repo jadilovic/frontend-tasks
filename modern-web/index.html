@@ -5,10 +5,36 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>History of Web</title>
+		<link rel="stylesheet" href="./style.css" />
 	</head>
-	<body>
+	<body onload="doSomething()">
+		<h1>Window</h1>
+		<button id="myWinBtn">Window Btn</button>
+		<h1>Canvas</h1>
+		<canvas id="myCanvas" height="500" width="500"></canvas>
+		<h1>Animation Box</h1>
+		<button id="anBtn">Move</button>
+		<div id="anBox"></div>
+		<h1>Moving Box</h1>
+		<div id="box"></div>
 		<h1>button time</h1>
 		<button id="myButton">click me</button>
+		<h1>input time</h1>
+		<input type="text" name="myInput" id="myInput" />
+		<div id="myDiv"></div>
+		<div id="outerDiv">
+			<div id="newDiv"></div>
+		</div>
+		<h1>Show / Hide Image</h1>
+		<div class="container">
+			<button id="imgBtn">Show</button>
+			<img
+				style="visibility: hidden"
+				id="gImg"
+				src="./smallImage.jpg"
+				alt="google picture"
+			/>
+		</div>
 		<h1>Event Delegation</h1>
 		<div>
 			<ul class="products">
@@ -17,6 +43,8 @@
 				<li id="wallets">wallets</li>
 			</ul>
 		</div>
+		<h1>Window</h1>
+		<div id="myWindow"></div>
 		<script src="./index.js"></script>
 		<!-- <script src="./utils.js"></script> -->
 	</body>
