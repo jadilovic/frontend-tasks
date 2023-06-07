@@ -1,0 +1,16 @@
+{
+	"name": "german-node",
+	"version": "1.0.0",
+	"description": "",
+	"main": "helloWorld.js",
+	"scripts": {
+		"start": "nodemon user-names.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"nodemon": "^2.0.22",
+		"selenium-webdriver": "^4.9.2"
+	}
+}
