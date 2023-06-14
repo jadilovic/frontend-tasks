@@ -8,3 +8,10 @@ for (var i = 1; i < 100; i++) {
   if (output === '') output += i;
   console.log(output);
 }
+
+for (var index = 0; index < 10; index++) {
+  var content = '';
+  if (index % 3) content += 'Buzz';
+
+  if (content === '') {}
+}

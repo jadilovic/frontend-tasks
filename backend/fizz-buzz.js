@@ -7,3 +7,9 @@ for (let i = 1; i < 100; i++) {
 	if (output === '') output += i;
 	console.log(output);
 }
+for (let index = 0; index < 10; index++) {
+	let content = '';
+	if (index % 3) content += 'Buzz';
+	if (content === '') {
+	}
+}
