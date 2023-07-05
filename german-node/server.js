@@ -34,6 +34,14 @@ fs.readFile(filePath, 'utf8', (error, csvData) => {
 		dataArr.push(obj);
 	});
 
-	console.log('CSV data parsed successfully');
-	console.log(dataArr);
+	// console.log('CSV data parsed successfully');
+	// console.log(dataArr);
 });
+
+const arr = ['a', 'b', 'c', 'd'];
+const newArr = arr.slice(1, 3);
+arr.splice(2, 0, 'k', 'x', 'y');
+console.log(arr, newArr);
+const bob = 'Hello Bob';
+const slBob = bob.slice(2, 4);
+console.log(bob, slBob, 'me');
